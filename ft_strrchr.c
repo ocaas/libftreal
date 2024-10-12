@@ -27,3 +27,14 @@ char	*ft_strrchr(const char *s, int c)
 		return ((char *)&s[a]);
 	return (0);
 }
+
+/* int	main(void)
+{
+	char *str = "Hello, World!";
+    char *res;
+
+    res = ft_strrchr(str, 'l');
+    printf("%s\n", res);
+
+    return (0);
+} */

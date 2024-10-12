@@ -29,10 +29,9 @@ int	ft_strncmp(const char *c1, const char *c2, size_t n)
 		return (0);
 	return (*(unsigned char *)s1 - *(unsigned char *)s2);
 }
-/* 
-int main(void)
+
+/* int main(void)
 {
-    // Casos de prueba simples
     printf("Comparando 'Hola' y 'Hola' (n = 4): %d\n",
 	 ft_strncmp("Hola", "Hola", 4));  // Esperado: 0
     printf("Comparando 'Hola' y 'Holb' (n = 4): %d\n",

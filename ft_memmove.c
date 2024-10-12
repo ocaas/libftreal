@@ -37,35 +37,28 @@ void	ft_memmove(void *dst, const void *src, size_t n)
 	}
 }
 /* 
-// Declaración de la función ft_memmove
+
 void ft_memmove(void *s1, const void *s2, size_t n);
 
 int main(void)
 {
     char src[50] = "Hello, this is a memmove test!";
-    char dest[50];  // destino vacío inicialmente
+    char dest[50];
 
-    // Imprimir antes de memmove
     printf("Antes de ft_memmove:\n");
     printf("Source: %s\n", src);
     printf("Dest: %s\n\n", dest);
 
-    // Usamos ft_memmove para copiar 20 bytes desde src a dest
     ft_memmove(dest, src, 20);
 
-    // Imprimir después de memmove
     printf("Después de ft_memmove:\n");
     printf("Source: %s\n", src);
     printf("Dest: %s\n", dest);
 
-    // Ejemplo con solapamiento
     printf("\n--- Ejemplo con solapamiento ---\n");
 
-    // Solapar dentro del mismo array (mover dentro de src)
-    ft_memmove(src + 7, src, 10);  //
-	 Movemos los primeros 10 caracteres a partir del índice 7
+    ft_memmove(src + 7, src, 10);
     printf("Source después de solapamiento: %s\n", src);
 
     return 0;
-}
- */
+} */

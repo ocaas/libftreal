@@ -28,23 +28,17 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	return (NULL);
 }
 
-/* 
-int main(void)
+/* int main(void)
 {
-    const char str[] = "Hello, world!";
+    char str[] = "Hola mundo!";
     char *result;
-    char target = 'w';
-    size_t size = 13; // Cantidad de caracteres a buscar en la cadena
 
-    // Llamamos a la función para buscar la letra 'w' en los primeros
-	 13 caracteres de str
-    result = (char*) ft_memchr(str, target, size);
+    result = ft_memchr(str, 'm', 8);
 
-    // Si encuentra el carácter
     if (result)
-        printf("Carácter '%c' encontrado: %s\n", target, result);
+        printf("Character found: '%c' in position : %ld\n", *result, result - str);
     else
-        printf("Carácter '%c' no encontrado.\n", target);
+        printf("Charecter not found in the first 8 places. \n");
 
     return 0;
 } */

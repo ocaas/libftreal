@@ -1,29 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olopez-s <olopez-s@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/19 01:32:12 by olopez-s          #+#    #+#             */
-/*   Updated: 2024/09/19 01:32:12 by olopez-s         ###   ########.fr       */
+/*   Created: 2024/10/03 06:42:17 by olopez-s          #+#    #+#             */
+/*   Updated: 2024/10/03 06:42:17 by olopez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalpha(int c)
+void	ft_putnbr_fd(int n, int fd)
 {
-	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
-		return (1);
-	else
-		return (0);
-}
+	if (n == -2147483648)
+	{
+		ft_putstr_fd("-2147483648", fd);
+	}
+	if (n < 0)
+	{
+		ft_putchar_fd('-', fd);
+		ft_putnbr_fd(-n, fd);
+	}
 
-/* int	main (void)
-{
-    int a;
-	a = 'k';
-	printf ("%d\n", ft_isalpha(a));
+	if (n >= 0 && n <= 9)
+	{
+		ft_putchar_fd('0' + n, fd);
+	}
+	if (n >= 10)
+	{
+		ft_putnbr_fd(n / 10, fd);
+		ft_putnbr_fd(n % 10, fd);
+	}
+	
 }
- */
+/* 
+int main(void)
+{
+    int number = -1234;
+    ft_putnbr_fd(number, 1);
+} */

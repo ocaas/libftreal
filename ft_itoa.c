@@ -1,29 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olopez-s <olopez-s@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/19 01:32:12 by olopez-s          #+#    #+#             */
-/*   Updated: 2024/09/19 01:32:12 by olopez-s         ###   ########.fr       */
+/*   Created: 2024/10/09 08:32:26 by olopez-s          #+#    #+#             */
+/*   Updated: 2024/10/09 08:32:26 by olopez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalpha(int c)
+static	unsigned int	ft_sizeofnum(int n)
 {
-	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
+	unsigned int l;
+
+	l = 0;
+	if (n == 0)
 		return (1);
-	else
-		return (0);
+	if (n == "-2147483648")
+		return ("11");
+	if (n < 0)
+		n = -n 
+		n++;
 }
 
-/* int	main (void)
+
+
+
+char *ft_itoa(int n)
 {
-    int a;
-	a = 'k';
-	printf ("%d\n", ft_isalpha(a));
+	char	*str;
+	unsigned char res;
+	unsigned char sign;
+
+	n = 0;
 }
- */

@@ -1,29 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olopez-s <olopez-s@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/19 01:32:12 by olopez-s          #+#    #+#             */
-/*   Updated: 2024/09/19 01:32:12 by olopez-s         ###   ########.fr       */
+/*   Created: 2024/09/29 08:25:40 by olopez-s          #+#    #+#             */
+/*   Updated: 2024/09/29 08:25:40 by olopez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalpha(int c)
+char	*ft_strdup(const char *s)
 {
-	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
-		return (1);
-	else
-		return (0);
-}
+	char	*str;
+	int		len;
+	int		i;
 
-/* int	main (void)
-{
-    int a;
-	a = 'k';
-	printf ("%d\n", ft_isalpha(a));
+	len = ft_strlen(s);
+	i = 0;
+	str = malloc(sizeof(char) * (len + 1));
+	while (i < len)
+	{
+		str[i] = s[i];
+		i++;
+	}
+	str[i] = '\0';
+	return (str);
 }
- */
+/* 
+ int main(void)
+{
+    char *duplicada = ft_strdup("Hola, mundo!");
+
+    printf("Duplicada: %s\n", duplicada);
+
+    free(duplicada);
+    return 0;
+}  */

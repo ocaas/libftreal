@@ -1,40 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olopez-s <olopez-s@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/23 00:48:31 by olopez-s          #+#    #+#             */
-/*   Updated: 2024/09/23 00:48:31 by olopez-s         ###   ########.fr       */
+/*   Created: 2024/10/01 08:11:32 by olopez-s          #+#    #+#             */
+/*   Updated: 2024/10/01 08:11:32 by olopez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+char	*ft_strjoin(const char *s1, const char *s2)
 {
-	size_t	d;
-	size_t	s;
+	size_t	c1;
+	size_t	c2;
+	char	*f;
 
-	d = 0;
-	s = 0;
-	while (dst[d] && d < size)
-		d++;
-	while (src[s] && (d + s + 1) < size)
+	f = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
+	if (!f)
+		return (NULL);
+	c1 = 0;
+	c2 = 0;
+	while (s1[c1] != '\0')
 	{
-		dst[d + s] = src[s];
-		s++;
+		f[c1] = s1[c1];
+		c1++;
 	}
-	if (d < size)
-		dst[d + s] = '\0';
-	return (d + ft_strlen(src));
+	while (s2[c2] != '\0')
+	{
+		f[c1 + c2] = s2[c2];
+		c2++;
+	}
+	f[c1 + c2] = '\0';
+	return (f);
 }
 /* 
 int	main(void)
 {
-	char    dst[100] = "Hello, ";
-    ft_strlcat(dst, "World!", 100);
-    printf("%s\n", dst);
-    return (0);
-} */
+	char *s = "hola,";
+	char *h = "mundo";
+	char *d = ft_strjoin(s, h);
+	printf("%s\n", d);
+}
+ */

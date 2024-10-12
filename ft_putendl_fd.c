@@ -1,29 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olopez-s <olopez-s@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/19 01:32:12 by olopez-s          #+#    #+#             */
-/*   Updated: 2024/09/19 01:32:12 by olopez-s         ###   ########.fr       */
+/*   Created: 2024/10/03 03:55:22 by olopez-s          #+#    #+#             */
+/*   Updated: 2024/10/03 03:55:22 by olopez-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalpha(int c)
+void	ft_putendl_fd(char *s, int fd)
 {
-	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
-		return (1);
-	else
-		return (0);
+	ft_putstr_fd(s, fd);
+	ft_putchar_fd('\n', fd);
 }
-
-/* int	main (void)
+/* 
+int	main(void)
 {
-    int a;
-	a = 'k';
-	printf ("%d\n", ft_isalpha(a));
-}
- */
+	ft_putendl_fd("jswj", 1);
+} */
