@@ -25,12 +25,12 @@ char	*ft_strnstr(const char *big, const char *small, size_t len)
 	while (xx[c] != '\0' && c < len)
 	{
 		l = 0;
-		while (xx[c + l] == small[l] && (c + 1) < len)
+		while (xx[c + l] == small[l] && (c + l) < len && small[l] != '\0')
 		{
-			if (small[1 + l] == '\0')
-				return (&xx[c]);
 			l++;
 		}
+		if (small[l] == '\0')
+			return (&xx[c]);
 		c++;
 	}
 	return (NULL);

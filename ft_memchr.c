@@ -36,7 +36,8 @@ void	*ft_memchr(const void *s, int c, size_t n)
     result = ft_memchr(str, 'm', 8);
 
     if (result)
-        printf("Character found: '%c' in position : %ld\n", *result, result - str);
+        printf("Character found: '%c' in position : %ld\n", *result,
+		 result - str);
     else
         printf("Charecter not found in the first 8 places. \n");
 

@@ -18,10 +18,10 @@ void	ft_bzero(void *s, size_t n)
 	size_t			c;
 
 	c = 0;
-	help = (unsigned char *)s;
-	while (c > n)
+	help = s;
+	while (c < n)
 	{
-		help[c] = 0;
+		help[c] = '\0';
 		c++;
 	}
 }

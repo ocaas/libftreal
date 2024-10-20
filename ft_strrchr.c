@@ -17,15 +17,15 @@ char	*ft_strrchr(const char *s, int c)
 	int	a;
 
 	a = ft_strlen(s);
-	while (a > 0)
+	if (c >= 256)
+		c = c % 256;
+	while (a >= 0)
 	{
-		if (s[a - 1] == c)
-			return ((char *)&s[a -1]);
-		s--;
+		if (s[a] == c)
+			return ((char *)&s[a]);
+		a--;
 	}
-	if (c == '\0')
-		return ((char *)&s[a]);
-	return (0);
+	return (NULL);
 }
 
 /* int	main(void)

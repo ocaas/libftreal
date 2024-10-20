@@ -17,13 +17,11 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	size_t	len;
 	size_t	c;
 
-	if (!dst || !src)
-		return (0);
 	len = ft_strlen(src);
 	c = 0;
 	if (src != NULL && dst != NULL && size > 0)
 	{
-		while (src[c] && c < (size) && dst[c])
+		while (c < len && c < (size - 1))
 		{
 			dst[c] = src[c];
 			c++;

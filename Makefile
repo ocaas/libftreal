@@ -34,6 +34,8 @@ SRC = ft_isalpha.c \
 	ft_bzero.c \
 	ft_atoi.c \
 	ft_calloc.c \
+	ft_split.c \
+	ft_itoa.c \
 
 CFLAGS = -Wall -Wextra -Werror
 

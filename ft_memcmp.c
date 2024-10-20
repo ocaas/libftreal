@@ -14,12 +14,12 @@
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	char	*c1;
-	char	*c2;
-	size_t	c;
+	unsigned char	*c1;
+	unsigned char	*c2;
+	size_t			c;
 
-	c1 = (char *)s1;
-	c2 = (char *)s2;
+	c1 = (unsigned char *)s1;
+	c2 = (unsigned char *)s2;
 	c = 0;
 	while (c < n)
 	{
@@ -27,7 +27,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 		{
 			return ((c1[c]) - (c2[c]));
 		}
-		if (c1 == (void *)0 && c2 == (void *)0)
+		if (!c1 && !c2)
 			return (0);
 		c++;
 	}

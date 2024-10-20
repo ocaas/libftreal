@@ -12,14 +12,11 @@
 
 #include "libft.h"
 
-
 static int	ft_word_count(char const *s, char set)
 {
 	int	wordcount;
 	int	wordfound;
 
-	if (!s || !sep)
-		return (NULL);
 	wordcount = 0;
 	wordfound = 0;
 	while (*s != '\0')
@@ -31,12 +28,12 @@ static int	ft_word_count(char const *s, char set)
 			wordcount++;
 			wordfound = 1;
 		}
-		s++;	
+		s++;
 	}
 	return (wordcount);
 }
 
-static char *ft_cpystr(char *s, int set)
+static char	*ft_cpystr(char *s, int set)
 {
 	int		c;
 	int		len;
@@ -48,7 +45,7 @@ static char *ft_cpystr(char *s, int set)
 	len = c;
 	newstr = malloc(sizeof(char) * (len + 1));
 	if (!newstr)
-		returns(NULL);
+		return (NULL);
 	c = 0;
 	while (c < len)
 	{
@@ -62,16 +59,46 @@ static char *ft_cpystr(char *s, int set)
 static char	**freemem(char **ck, int d)
 {
 	while (d > 0)
-		free(ck[--d])
+		free(ck[--d]);
 	free(ck);
 	return (NULL);
 }
 
+static char	**pros(char const *s, char c, int word_count)
+{
+	char	**dst;
+	int		d;
+
+	d = 0;
+	dst = (char **)malloc(sizeof(char *) * (word_count + 1));
+	if (!dst)
+		return (NULL);
+	while (*s)
+	{
+		while (*s == c)
+			s++;
+		if (*s)
+		{
+			dst[d] = ft_cpystr((char *)s, c);
+			if (!dst[d])
+			{
+				return (freemem(dst, d));
+			}
+			d++;
+		}
+		while (*s && *s != c)
+			s++;
+	}
+	dst[d] = NULL;
+	return (dst);
+}
+
 char	**ft_split(char const *s, char c)
 {
-	char	**array;
-	int	worcount;
+	int	word_count;
 
-	
-	
+	if (!s)
+		return (NULL);
+	word_count = ft_word_count(s, c);
+	return (pros(s, c, word_count));
 }
